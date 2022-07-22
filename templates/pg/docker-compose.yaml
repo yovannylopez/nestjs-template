@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: npm run dev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000' # Run server port
+      - '5858:5858' # Debug port
+    restart: always
+  db:
+      image: postgres:14.3
+      container_name: postgres
+      restart: always
+      ports:
+        - 5332:5332
+      environment:
+        POSTGRES_DATABASE: {{projectName}}-db
+      # volumes:
+      #   - ./mongo:/data/db

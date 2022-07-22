@@ -1,0 +1,7 @@
+{
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "assets": ["common/**"],
+    "plugins": ["@nestjs/swagger/plugin"]
+  }
+}

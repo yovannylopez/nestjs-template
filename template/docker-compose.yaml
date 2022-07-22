@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: npm run dev
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - '3000:3000' # Run server port
+      - '5858:5858' # Debug port
+    restart: always
+  db:
+      image: mongo:5
+      container_name: mongodb
+      restart: always
+      ports:
+        - 27017:27017
+      environment:
+        MONGODB_DATABASE: {{projectName}}-db
+      # volumes:
+      #   - ./mongo:/data/db

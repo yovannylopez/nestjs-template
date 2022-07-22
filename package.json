@@ -1,0 +1,42 @@
+{
+  "name": "nestjs-template",
+  "version": "0.0.0",
+  "description": "Template for Microservices with Nest.js framework",
+  "author": "Yovanny López",
+  "license": "MIT",
+  "scripts": {
+    "generate": "plop",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
+    "plop": "^3.1.1"
+  },
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "standard-version": "^9.5.0"
+  },
+  "engines": {
+    "node": ">= 16.16.0",
+    "npm": ">= 8.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yovannylopez/nestjs-template"
+  },
+  "homepage": "https://github.com/yovannylopez/nestjs-template#readme",
+  "contributors": [
+    "Yovanny López"
+  ],
+  "keywords": [
+    "Nest.js",
+    "Node.js",
+    "Starter",
+    "Template"
+  ]
+}

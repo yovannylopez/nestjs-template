@@ -5,6 +5,12 @@ module.exports = function (plop) {
     description: 'Template for Microservices with Nest.js framework',
     prompts: [
       {
+        type: 'list',
+        name: 'action',
+        message: 'Project type',
+        choices: ['BFF', 'MS with MongoDB', 'MS with Postgres'],
+      },
+      {
         type: 'input',
         name: 'projectName',
         message: 'Project name',
@@ -43,17 +49,48 @@ module.exports = function (plop) {
         default: year,
       },
     ],
-    actions: [
-      {
-        base: 'template',
-        destination: 'app',
-        force: true,
-        globOptions: {
-          dot: true,
-        },
-        templateFiles: 'template/**/*',
-        type: 'addMany',
-      },
-    ],
+    actions: (data) => {
+      let actions = [];
+      if (data.action === 'BFF') {
+        actions = actions.concat([{
+          base: 'templates/bff',
+          destination: 'app',
+          force: true,
+          globOptions: {
+            dot: true,
+          },
+          templateFiles: 'templates/bff/**/*',
+          type: 'addMany',
+        }]);
+      } else if(data.action === 'MS with MongoDB') {
+        actions = actions.concat(
+          {
+            base: 'templates/mongo',
+            destination: 'app',
+            force: true,
+            globOptions: {
+              dot: true,
+            },
+            templateFiles: 'templates/mongo/**/*',
+            type: 'addMany',
+          }
+        );
+      } else if (data.action === 'MS with Postgres') {
+        actions = actions.concat(
+          {
+            base: 'templates/postgres',
+            destination: 'app',
+            force: true,
+            globOptions: {
+              dot: true,
+            },
+            templateFiles: 'templates/postgres/**/*',
+            type: 'addMany',
+          }
+        );
+      }
+      return actions;
+    },
   });
 };
+

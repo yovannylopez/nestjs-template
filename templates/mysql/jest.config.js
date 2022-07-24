@@ -9,6 +9,7 @@ module.exports = {
     '!src/domain/**/*.dto.ts',
     '!src/domain/**/*.entity.ts',
     '!src/domain/**/*.module.ts',
+    '!src/domain/**/*.provider.ts',
     '!src/infrastructure/**/*.ts',
   ],
   coverageDirectory: 'coverage',

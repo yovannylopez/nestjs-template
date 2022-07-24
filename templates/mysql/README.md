@@ -2,7 +2,7 @@
 
 > {{projectDescription}}
 
-This template has an users CRUD example with a postgres database.
+This template has an users CRUD example with a MySQL database.
 
 ---
 
@@ -22,6 +22,7 @@ This template has an users CRUD example with a postgres database.
 - [Installation](#installation-⚙️)
 - [Docker](#docker-🐳)
 - [Database config](#database-config-⚙️)
+- [Database migrations](#database-migrations-🗄️)
 - [Running the app](#running-the-app-🚀)
 - [Test](#test-🧪)
 - [Linter](#linter-✅)
@@ -81,17 +82,47 @@ $ npm run docker:debug
 
 ## Database config ⚙️
 
-This template has persistence with a mongodb database.
+This microservice has persistence with a database in Amazon Aurora with MySQL driver.
 
-Configure the following values ​​in each environment:
+Configure the following values ​​in each environment inside the config folder:
 
-| Option   | local(example)     |
-| -------- | ------------------ |
-| host     | localhost          |
-| port     | 27017              |
-| username |                    |
-| password |                    |
-| database | {{projectName}}-db |
+| Option      | local              | production         |
+| ----------- | ------------------ | ------------------ |
+| host        | localhost          | localhost          |
+| port        | 3306               | 3306               |
+| username    | root               |                    |
+| password    | root               |                    |
+| name        | {{projectName}}-db | {{projectName}}-db |
+| autoload    | true               | false              |
+| synchronize | true               | false              |
+
+synchronize only can be true at local environment, production environment, should be false.
+
+---
+
+⏪️ - [Back](#contents-📦)
+
+---
+
+## Database migrations 🗄️
+
+Create a migration file:
+
+```bash
+$ npm run db:create <create-example-table>
+```
+
+Execute migrations:
+
+```bash
+$ npm run db:migrate
+```
+
+Rollback migrations:
+
+```bash
+$ npm run db:rollback
+```
 
 ---
 

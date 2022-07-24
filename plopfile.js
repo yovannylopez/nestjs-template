@@ -75,7 +75,7 @@ module.exports = function (plop) {
             type: 'addMany',
           }
         );
-      } else if (data.action === 'MS with MS with MySQL') {
+      } else if (data.action === 'MS with MySQL') {
         actions = actions.concat(
           {
             base: 'templates/mysql',

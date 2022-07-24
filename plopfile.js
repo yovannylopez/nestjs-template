@@ -8,7 +8,7 @@ module.exports = function (plop) {
         type: 'list',
         name: 'action',
         message: 'Project type',
-        choices: ['BFF', 'MS with MongoDB', 'MS with Postgres'],
+        choices: ['BFF', 'MS with MongoDB', 'MS with MySQL'],
       },
       {
         type: 'input',
@@ -75,16 +75,16 @@ module.exports = function (plop) {
             type: 'addMany',
           }
         );
-      } else if (data.action === 'MS with Postgres') {
+      } else if (data.action === 'MS with MS with MySQL') {
         actions = actions.concat(
           {
-            base: 'templates/postgres',
+            base: 'templates/mysql',
             destination: 'app',
             force: true,
             globOptions: {
               dot: true,
             },
-            templateFiles: 'templates/postgres/**/*',
+            templateFiles: 'templates/mysql/**/*',
             type: 'addMany',
           }
         );

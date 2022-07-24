@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/mokkapps/changelog-generator-demo/compare/v0.2.0...v0.2.1) (2022-07-24)
+
+
+### Bug Fixes
+
+* MS with MySQL case ([3d89dda](https://github.com/mokkapps/changelog-generator-demo/commits/3d89dda4d620d7925ef315b27290b5dd1d089e56))
+
 ## [0.2.0](https://github.com/mokkapps/changelog-generator-demo/compare/v0.1.0...v0.2.0) (2022-07-24)
 
 
